@@ -25,7 +25,24 @@ SECRET_KEY = "django-insecure-rx*t%p$(14-9ma)c9y*7)uvxj3p7140f^up#g%ha=c@-72cwe6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["4trcq7-8000.csb.app"]
+# Source - https://stackoverflow.com/a/70614605
+# Posted by Jaime Ortiz
+# Retrieved 2026-02-22, License - CC BY-SA 4.0
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://0.0.0.0",
+    "http://localhost",
+    "https://4trcq7-8000.csb.app"
+]
+
+
+# ALLOWED_HOSTS = [
+#     'http://4trcq7-8000.csb.app',
+# ],
+CORS_ORIGIN_WHITELIST = [
+    'https://4trcq7-8000.csb.app',
+]
 
 
 # Application definition
