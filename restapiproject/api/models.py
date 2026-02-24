@@ -5,6 +5,8 @@ class Task(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     completed = models.BooleanField(default=False)
+    def __str__(self):
+        return self.title
 
 class TradingJournalEntry(models.Model):
     Date=models.DateField()
@@ -22,8 +24,8 @@ class TradingJournalEntry(models.Model):
     Emotional_State=models.CharField(max_length=255,verbose_name="Emotional State")
     Why_this_trade=models.CharField(max_length=255,verbose_name="Why this trade")
     Chart_Screenshot=models.CharField(max_length=255,verbose_name="Chart Screenshot")
-
     def __str__(self):
-        return self.title
+        return str(self.Date)
+   
 
        
