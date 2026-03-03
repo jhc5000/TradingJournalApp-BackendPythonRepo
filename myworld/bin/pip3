@@ -1,4 +1,4 @@
-#!/project/workspace/myworld/bin/python
+#!/workspaces/Python-Repo/myworld/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
