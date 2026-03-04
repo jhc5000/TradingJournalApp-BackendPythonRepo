@@ -25,29 +25,45 @@ SECRET_KEY = "django-insecure-rx*t%p$(14-9ma)c9y*7)uvxj3p7140f^up#g%ha=c@-72cwe6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["4trcq7-8000.csb.app","127.0.0.1"]
 # Source - https://stackoverflow.com/a/70614605
 # Posted by Jaime Ortiz
 # Retrieved 2026-02-22, License - CC BY-SA 4.0
 
-CSRF_TRUSTED_ORIGINS = [
-    "http://0.0.0.0",
-    "http://localhost",
-    "https://4trcq7-8000.csb.app"
+
+ALLOWED_HOSTS = [
+    'www.example.com',
+    'api.example.com',
+    'localhost',
+    '127.0.0.1',
+    '192.168.99*'
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://www.example.com',
+    'https://api.example.com',
+    'http://localhost:8000',
+    'http://localhost:5173',
+    'http://127.0.0.1:8000',
+    "http://192.168.99.71:5173"
+]
+CORS_ALLOWED_ORIGINS = [
+    'https://www.example.com',
+    'https://api.example.com',
+    'http://locaßlhost:8000',
+    'http://localhost:5173',
+    'http://127.0.0.1:8000',
+    "http://192.168.99.71:5173"
+]
 
-# ALLOWED_HOSTS = [
-#     'http://4trcq7-8000.csb.app',
-# ],
-CORS_ORIGIN_WHITELIST = [
-    'https://4trcq7-8000.csb.app',
+CORS_ORIGIN_WHITELIST = [ 
+    
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -59,6 +75,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
