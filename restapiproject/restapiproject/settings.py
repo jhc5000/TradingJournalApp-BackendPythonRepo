@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
     'api.example.com',
     'localhost',
     '127.0.0.1',
+    '192.168.99.71',
     '192.168.99*'
 ]
 
